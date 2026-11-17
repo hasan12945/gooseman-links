@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gooseman</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --mist:#dde7e8; --ink:#1b2a33; --beak:#f28a1e; --feather:#fbfbf8; --muted:#4d6068;
+  color-scheme: light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){ --mist:#111b20; --ink:#edf2f2; --feather:#1c2a31; --muted:#9db0b7; color-scheme:dark; }
+}
+:root[data-theme="dark"]{ --mist:#111b20; --ink:#edf2f2; --feather:#1c2a31; --muted:#9db0b7; color-scheme:dark; }
+html{ height:100%; scroll-padding-top:env(safe-area-inset-top,0px); }
+*,*::before,*::after{ box-sizing:inherit; }
+body{
+  margin:0; min-height:100%; background:var(--mist); color:var(--ink);
+  font-family:"Bricolage Grotesque", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  padding:48px 20px;
+}
+main{ width:100%; max-width:380px; text-align:center; }
+.avatar{
+  width:112px; height:112px; border-radius:50%; margin:0 auto 20px;
+  background:var(--feather); border:4px solid var(--beak);
+  display:flex; align-items:center; justify-content:center; font-size:56px; overflow:hidden;
+}
+.avatar img{ width:100%; height:100%; object-fit:cover; display:block; }
+h1{ margin:0 0 32px; font-size:2.6rem; font-weight:800; letter-spacing:-0.02em; line-height:1; }
+.links{ display:flex; flex-direction:column; gap:18px; }
+.link{
+  display:flex; align-items:center; gap:16px; text-align:left; text-decoration:none; color:var(--ink);
+  background:var(--feather); border:2px solid var(--ink); border-radius:14px; padding:16px 18px;
+  box-shadow:5px 5px 0 var(--beak); transition:transform .12s ease, box-shadow .12s ease;
+}
+.link:hover{ transform:translate(2px,2px); box-shadow:3px 3px 0 var(--beak); }
+.link:active{ transform:translate(5px,5px); box-shadow:0 0 0 var(--beak); }
+.link:focus-visible{ outline:3px solid var(--ink); outline-offset:4px; }
+.link svg{ width:30px; height:30px; flex:none; }
+.name{ display:block; font-weight:800; font-size:1.15rem; line-height:1.2; }
+.handle{ display:block; font-weight:600; font-size:.95rem; color:var(--muted); }
+@media (prefers-reduced-motion: reduce){ .link{ transition:none; } }
+</style>
+</head>
+<body>
+<main>
+  <div class="avatar"><img src="data:image/jpeg;base64,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" alt="Gooseman" width="112" height="112"></div>
+  <h1>Gooseman</h1>
+  <nav class="links" aria-label="Gooseman on social media">
+    <a class="link" href="https://www.youtube.com/@goosem4n" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="1" y="4.5" width="22" height="15" rx="4.5" fill="#ff0000"/><path d="M10 8.7v6.6l5.7-3.3z" fill="#fff"/></svg>
+      <span><span class="name">YouTube</span><span class="handle">@goosem4n</span></span>
+    </a>
+    <a class="link" href="https://www.instagram.com/ha.s4n/" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="ig" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#feda75"/><stop offset=".35" stop-color="#fa7e1e"/><stop offset=".65" stop-color="#d62976"/><stop offset="1" stop-color="#4f5bd5"/></linearGradient></defs><rect x="1.5" y="1.5" width="21" height="21" rx="6" fill="url(#ig)"/><rect x="5.5" y="5.5" width="13" height="13" rx="4" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="12" cy="12" r="3.2" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="16.3" cy="7.7" r="1.1" fill="#fff"/></svg>
+      <span><span class="name">Instagram</span><span class="handle">@ha.s4n</span></span>
+    </a>
+  </nav>
+</main>
+</body>
+</html>
